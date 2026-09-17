@@ -1,0 +1,59 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPEeVHLRb6L5T8hYWvOnTR+",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/charistyretta23/Sistem-panen-Kel.4/blob/Pemrosesan-Data/Pemrosesan_data\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "id": "mnifijGRHaca"
+      },
+      "outputs": [],
+      "source": [
+        "# ==========================================\n",
+        "# MODUL 2: PEMROSESAN DATA (Dikerjakan Anggota B)\n",
+        "# ==========================================\n",
+        "def hitung_total_penjualan(data):\n",
+        "    subtotal = data[\"harga\"] * data[\"jumlah\"]\n",
+        "\n",
+        "    # Logika bisnis: Diskon 10% jika transaksi > Rp 100.000\n",
+        "    if subtotal > 100000:\n",
+        "        diskon = subtotal * 0.10\n",
+        "    else:\n",
+        "        diskon = 0\n",
+        "\n",
+        "    total_bayar = subtotal - diskon\n",
+        "\n",
+        "    return {\n",
+        "        \"subtotal\": subtotal,\n",
+        "        \"diskon\": diskon,\n",
+        "        \"total_bayar\": total_bayar\n",
+        "    }"
+      ]
+    }
+  ]
+}
